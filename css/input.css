@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --home-spacing: 32px;
+  }
+  .inner {
+    @apply px-8 md:px-8 mx-auto xl:w-[1135px];
+  }
+  .md-inner {
+    @apply md:max-w-[634px] xl:max-w-none md:mx-auto;
+  }
+}
+
+@layer components {
+  header {
+    background: linear-gradient(180deg, #6f7dfb 0%, #26308c 100%);
+  }
+  .show {
+    visibility: visible !important;
+    opacity: 100 !important;
+  }
+  .btn {
+    @apply px-8 py-3 rounded-3xl;
+  }
+  .full {
+    margin-inline: calc(var(--home-spacing) * -1);
+  }
+  .hero-bottom {
+    margin-inline: calc(var(--home-spacing) * -1);
+    padding: var(--home-spacing);
+    background-image: url(../images/edb770c7408223aee139da9d3665f9c8.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right -85px bottom;
+  }
+  @media screen(md) {
+    .hero-bottom {
+      background-position: right -15px bottom -100px;
+    }
+  }
+  @media screen(xl) {
+    .hero-bottom {
+      background-size: 410px;
+      background-position: right -15px bottom -129px;
+    }
+    .full {
+      margin-inline: 0;
+    }
+  }
+}
